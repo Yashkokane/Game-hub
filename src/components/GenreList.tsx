@@ -11,10 +11,10 @@ import useGenres, { Genre } from "../Hooks/UseGenre";
 
 interface Prop {
   onSelectGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  selectedGenreID?: number | null;
 }
 
-const GenreList = ({ selectedGenre, onSelectGenre }: Prop) => {
+const GenreList = ({ selectedGenreID, onSelectGenre }: Prop) => {
   const { data, isLoading, error } = useGenres();
   if (error) return null;
   if (isLoading) return <Spinner></Spinner>;
@@ -28,7 +28,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Prop) => {
         {data?.results.map((genre) => (
           <ListItem key={genre.id} paddingY={"5px"}>
             <HStack
-              background={genre.id === selectedGenre?.id ? "#353557" : ""}
+              background={genre.id === selectedGenreID ? "#353557" : ""}
               borderRadius={10}>
               <Image
                 boxSize="70px"
@@ -38,7 +38,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Prop) => {
               <Button
                 whiteSpace="normal"
                 textAlign="left"
-                fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
+                fontWeight={genre.id === selectedGenreID ? "bold" : "normal"}
                 fontSize={"large"}
                 variant={"link"}
                 onClick={() => onSelectGenre(genre)}>

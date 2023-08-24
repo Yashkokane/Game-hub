@@ -16,7 +16,7 @@ const GameGrid = ({ GameQuery }: Props) => {
     data,
     error,
     isLoading,
-    isFetchingNextPage,
+    //isFetchingNextPage,
     fetchNextPage,
     hasNextPage,
   } = useGames(GameQuery);
