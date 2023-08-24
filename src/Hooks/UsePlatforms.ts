@@ -9,15 +9,6 @@ export interface Platform {
   name: string;
   slug: string;
 }
-//const usePlatforms = () => ({ data: Platforms, isLoading: false, error: null });
-
-// const usePlatforms = () =>
-//   useQuery({
-//     queryKey: ["platform"] || undefined,
-//     queryFn: apiClient.getAll,
-//     staleTime: 24 * 60 * 60 * 1000, //24h,
-//     initialData: { count: Platforms.length, results: Platforms },
-//   });
 
 const usePlatforms = () =>
   useQuery({
