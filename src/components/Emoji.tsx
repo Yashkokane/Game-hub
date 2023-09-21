@@ -10,7 +10,7 @@ const Emoji = ({ rating }: Prop) => {
   const EmojiMap: { [key: number]: ImageProps } = {
     3: { src: meh, alt: "meh", boxSize: "25px" },
     4: { src: thumbsup, alt: "recommended", boxSize: "25px" },
-    5: { src: Bullseye, alt: "Exceptional", boxSize: "35px" },
+    5: { src: Bullseye, alt: "Exceptional", boxSize: "25px" },
   };
   return <Image {...EmojiMap[rating]} marginTop={1}></Image>;
 };
